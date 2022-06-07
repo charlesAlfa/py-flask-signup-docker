@@ -27,7 +27,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{
-                        docker.withRegistry('https://public.ecr.aws/r0c4j8i7/jenkins-server-public') {
+                        docker.withRegistry('https://291539027396.dkr.ecr.us-east-1.amazonaws.com/jenkins-server', "ecr:eu-east-1:jenkins") {
                     app.push("${env.BUILD_NUMBER}")
                     app.push("latest")
                     }
